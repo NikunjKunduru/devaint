@@ -12,7 +12,7 @@ public interface IDevaintService {
      * @param stackTrace The stack trace of the exception as a String.
      * @return ResponseEntity containing an acknowledgment message with a tracking ID or status.
      */
-    ResponseEntity<String> getRootCause(String stackTrace);
+    ResponseEntity<String> triggerRootCauseAnalysis(String stackTrace);
 
     /**
      * Retrieves the GPT-4o response using the correlation ID.

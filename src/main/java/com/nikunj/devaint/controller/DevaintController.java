@@ -15,14 +15,14 @@ public class DevaintController {
     @Autowired
     private IDevaintService devaintService;
 
-    @PostMapping(value = "/getRootCause", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<String> getRootCause(@RequestBody String stackTrace) {
-        String methodName = "getRootCause()";
+    @PostMapping(value = "/triggerRootCauseAnalysis", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<String> triggerRootCauseAnalysis(@RequestBody String stackTrace) {
+        String methodName = "triggerRootCauseAnalysis()";
         log.info(LogConstants.START_METHOD, methodName);
         log.debug("Received stackTrace: {}", stackTrace);
 
         try {
-            ResponseEntity<String> rootCauseAnalysis = devaintService.getRootCause(stackTrace);
+            ResponseEntity<String> rootCauseAnalysis = devaintService.triggerRootCauseAnalysis(stackTrace);
             log.info("Successfully processed root cause analysis.");
             log.info(LogConstants.END_METHOD, methodName);
             return rootCauseAnalysis;

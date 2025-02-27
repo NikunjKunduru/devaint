@@ -33,8 +33,8 @@ public class DevaintServiceImpl implements IDevaintService {
     }
 
     @Override
-    public ResponseEntity<String> getRootCause(String stackTrace) {
-        String methodName = "getRootCause()";
+    public ResponseEntity<String> triggerRootCauseAnalysis(String stackTrace) {
+        String methodName = "triggerRootCauseAnalysis()";
         log.info(LogConstants.START_METHOD, methodName);
         log.debug("Received stack trace for analysis");
 
